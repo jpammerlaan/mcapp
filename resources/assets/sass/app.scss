@@ -1,0 +1,68 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@mixin border-radius($radius: 1px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.flexcontainer {
+  @include border-top-radius( 10px );
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.navigation {
+  background-color: #f6f6f6;
+  border-bottom: 1px outset #333333;
+  width: 597px;
+  margin: 0;
+  .logo {
+    width: 96px;
+    padding: 8px 16px;
+   img {
+     width: 64px;
+     height: 64px;
+   }
+  }
+  ul.menu {
+    margin: 0;
+    padding: 0;
+    li {
+      line-height: 80px;
+      list-style-type: none;
+      width: 95px;
+      margin: 0;
+      text-align: center;
+      cursor: pointer;
+    }
+    li.active {
+      background-color: #e7e7e7;
+    }
+  }
+}
+
+.contentContainer {
+  width: 597px;
+  height: 600px;
+  padding: 20px 47px 20px 96px;
+}
+
+.wrapper {
+  margin: 30px;
+  display: inline-block;
+  -webkit-box-shadow: 3px 3px 10px 0px rgba(15,15,15,0.5);
+  -moz-box-shadow: 3px 3px 10px 0px rgba(15,15,15,0.5);
+  box-shadow: 3px 3px 10px 0px rgba(15,15,15,0.5);
+  border: 1px outset #333333;
+  @include border-left-radius( 5px );
+  @include border-right-radius( 5px );
+  @include border-top-radius( 10px );
+  @include border-bottom-radius( 5px );
+}

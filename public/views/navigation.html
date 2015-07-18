@@ -1,0 +1,28 @@
+<div class="navigation flexcontainer">
+    <div class="logo">
+        <img ng-src="/images/logo.png" alt="logo" />
+    </div>
+    <ul class="menu flexcontainer">
+        <li ng-class="{ active:tab.isSelected(1)}" ng-click="tab.selectTab(1)" ui-sref="home">
+                <span class="glyphicon glyphicon-home"></span> Home
+        </li>
+        <li ng-hide="User.isGuest()" ng-class="{ active:tab.isSelected(2)}" ng-click="tab.selectTab(2)" ui-sref="profile">
+            <span class="glyphicon glyphicon-User"></span> Profiel
+        </li>
+        <li ng-show="User.isGuest()"></li>
+        <li ng-show="User.isAdmin()" ng-class="{ active:tab.isSelected(3)}" ng-click="tab.selectTab(3)" ui-sref="stats">
+                <span class="glyphicon glyphicon-stats"></span> Prestaties
+        </li>
+        <li ng-hide="User.isAdmin()"></li>
+        <li ng-hide="User.isGuest()" ng-class="{ active:tab.isSelected(4)}" ng-click="tab.selectTab(4)" ui-sref="settings">
+            <span class="glyphicon glyphicon-cog"></span> Instellingen
+        </li>
+        <li ng-show="User.isGuest()"></li>
+        <li ng-hide="User.isGuest()" ng-class="{ active:tab.isSelected(5)}" ng-click="tab.selectTab(5)" ui-sref="logout">
+            <span class="glyphicon glyphicon-log-out"></span> Uitloggen
+        </li>
+        <li ng-show="User.isGuest()" ng-class="{ active:tab.isSelected(6)}" ng-click="tab.selectTab(6)" ui-sref="login">
+            <span class="glyphicon glyphicon-log-in"></span> Inloggen
+        </li>
+    </ul>
+</div>
